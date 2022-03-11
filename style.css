@@ -7,7 +7,7 @@ body{
 main {
     background-color: #1f2937;
     color: #f9f8fa;
-    padding-bottom: 6%;
+    padding-bottom: 8%;
 }
 /* flexing nav */
 nav{
@@ -56,9 +56,11 @@ main section > *{
 }
 /* giving image width of container */
 main img{
-    width: 100%;
+    max-width: 100%;
+    min-width: 200px;
     height: auto;
 }
+
 
 /* taking away default margin of h1 */
 h1{
@@ -81,3 +83,133 @@ main button{
 
 
 
+
+/* moving on second section part */
+
+/* making section 70% and centering */
+ main + section{
+     width: 70%;
+     margin: 0 auto;
+     padding-bottom: 5%;
+ }
+ 
+ /* aligning header to center */
+ main + section h1{
+     text-align: center;
+     margin: 3% 0;
+  }
+
+/* flexing child section and putting gap between children */
+main + section section{
+      display: flex; 
+      justify-content: center;
+ }
+
+ /* setting width of children */
+.blockContainer{
+    flex-basis: 50%;
+    text-align: center;
+}
+/* limiting max width of img to avoid overflow */
+.blockContainer img{
+    max-width: 50%;
+    min-width: 50px;
+    height: auto;
+}
+.upperContainer, .lowerContainer{
+    display: flex;
+}
+/* setting background color and padding to second section */
+.secondSection{
+    background-color: #e5e7eb;
+    padding: 7% 0;
+}
+/* setting div width and positioning to center, also adding overflow for float element */
+.secondSection div{
+    width: 70%;
+    margin: 0 auto;
+    overflow: auto;
+    text-align: center;
+}
+/* getting rid of default margin */
+.secondSection div p{
+    margin: 0;
+}
+/* floating element to the right */
+.secondSection div span{
+    float: right;
+}
+
+/* MOVING ON THIRD SECTION */
+.thirdSection{
+    padding: 7% 0;
+}
+.thirdSection *{
+    margin: 0;
+}
+.signUpDiv{
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: #3882f6;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 3% 5%;
+    color: white;
+    align-items: flex-end;
+}
+.signUpDiv button{
+    background-color: #3882f6;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
+footer{
+    text-align: center;
+    background-color: #1f2937;
+    color: white;
+    margin: 0;
+    padding: 3% 0;
+}
+
+@media only screen and (max-width: 635px) {
+    nav {
+      width: auto;
+      padding: 0 20px;
+    }
+    main section{
+        width: auto;
+        padding: 0 20px;
+    }
+    main + section{
+        width: auto;
+    }
+    .secondSection div{
+        width: auto;
+    }
+    .secondSection div span{
+        margin-right: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 460px){
+    main section{
+        display: block;
+    }
+    main section > *{
+        margin-bottom: 5px;
+    }
+    main + section section{
+        flex-wrap: wrap;
+    }
+    .secondSection div{
+        text-align: left;
+    }
+    .secondSection div h5{
+        margin-left: 200px;
+    }
+
+  }
